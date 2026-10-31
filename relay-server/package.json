@@ -1,0 +1,37 @@
+{
+  "name": "remote-adb-relay-server",
+  "version": "0.1.0",
+  "description": "Remote ADB relay server: bridges PC ADB TCP connections to Android devices over WebSocket tunnels (device registers, server opens a dynamic public TCP port, streams are multiplexed by streamId).",
+  "type": "module",
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prestart": "npm run build",
+    "start": "node dist/server.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "adb",
+    "remote",
+    "relay",
+    "tunnel",
+    "websocket",
+    "multiplexing"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^11.1.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/ws": "^8.5.13",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "remote-adb-pc-tool",
+  "version": "0.1.0",
+  "description": "PC CLI tool & helper scripts for Remote ADB connection and adbkey management",
+  "type": "module",
+  "bin": {
+    "adb-remote": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/qrcode-terminal": "^0.12.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5"
+  }
+}

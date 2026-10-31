@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  relay-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: remote-adb-relay
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "15000-15050:15000-15050"
+    environment:
+      - PORT=8080
+      - TCP_RANGE_START=15000
+      - TCP_RANGE_END=15050
